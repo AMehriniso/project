@@ -3,11 +3,73 @@
 1. Основы языка программирования Python
 2. Установленная среда разработки Python
 
-## Задание №1. Библиотека JSON
+## Задание №1. Модуль JSON
 Цель: написать программу, предполагающую работу с данными в формате JSON, включая чтение, запись и изменение данных, работу с вложенными структурами и преобразование JSON-строк.
-1. Для работы с библиотекой в первую очередь необходимо ее импортировать.
-2. 
-
+1. Для работы с модулем в первую очередь необходимо его импортировать.
+2. Создайте многострочную переменную и внесите в нее следующие строки:
+```
+{
+    "count": 3,
+    "workers": [{
+        "first name": "Ivan",
+        "second name": "Ivanov",
+        "nationality": "Russian",
+        "height": 182,
+        "higher education": true,
+        "languages": ["Python", "C#"],
+        "experience": 3
+    }, {
+        "first name": "Cristiano",
+        "second name": "Ronaldo",
+        "nationality": "Portuguese",
+        "height": 189,
+        "higher education": true,
+        "languages": ["C++", "Pascal", "Kotlin"],
+        "experience": 10
+    },
+    {
+        "first name": "Dwayne",
+        "second name": "Johnson",
+        "nationality": "American",
+        "height": 196,
+        "higher education": false,
+        "languages": ["Java", "Go"],
+        "experience": 1
+    }]
+}
+```
+4. Преобразуйте строку в объект Python.
+5. Удалите ключ `height` у каждого из работников списка.
+6. Добавьте к каждому работнику ключ, который будет отвечать, к примеру, за дату выдачи премии. В значение этого ключа внесите любую дату при помощи модуля `datetime`. Обратите внимание, что объект этого модуля не может быть представлен в виде формата `json`.
+7. Сохраните новый объект в формате `json`. При сохранении задайте отступ.
+8. Сохраните содержимое в файл, при сохранении задайте отступ.
+9. Вам дан новый объект `json`. У работников пропущена некоторая информация в сравнении с сохраненным json-объектом. Добавьте недостающие пары ключ-значение. В значение впишите `null`.
+```
+{
+    "count": 3,
+    "workers": [{
+        "first name": "Ivan",
+        "second name": "Ivanov",
+        "higher education": true,
+        "experience": 3
+    }, {
+        "first name": "Cristiano",
+        "second name": "Ronaldo",
+        "nationality": "Portuguese",
+        "higher education": true,
+        "languages": ["C++", "Pascal", "Kotlin"]
+    },
+    {
+        "first name": "Dwayne",
+        "second name": "Johnson",
+        "nationality": "American",
+        "higher education": false,
+        "languages": ["Java", "Go"],
+        "experience": 1
+    }]
+}
+```
+11. Сохраните новый объект в файл.
 
 ## Задание №2. Модуль Re
 Цель: написать программу, которая подразумевает выполнение основных типов работы с регулярными выражениями.
