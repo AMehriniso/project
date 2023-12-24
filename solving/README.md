@@ -1,7 +1,67 @@
 # Лабораторная работа
 
 ## Задание №1. Библиотека JSON
+Импортируем модуль Json:
+```
+import json
+```
+Создаем многострочную переменную old_json и заносим туда данные.
 
+Преобразовываем объект Json в объект Python:
+```
+py_obj = json.loads(old_json)
+```
+
+В цикле for проходим по всем параметрам workers и удаляем ключ `height`. Добавляем новый ключ `bonus` и при помощи модуля `datetime` присваиваем ему значение. При помощи `strftime` переводим объект в формат, который поддерживает json.
+
+```
+dat = 17
+for item in py_obj[0]['workers']:
+    del item['height']
+    item['bonus'] = date(2023, 10, dat).strftime('%d.%m.%y')
+    dat += 1
+```
+Сохраняем содержимое в файл при помощи `dump`. Параметр `indent` отвечает за отступы.
+
+```
+with open('pro.json', 'w') as f:
+    json.dump(py_obj, f, indent=4)
+```
+
+В переменную `second` заносим следующие по заданию данные.
+
+Аналогично при помощи `loads` переводим объект Json в объект Python.
+
+```
+obj2 = json.loads(second)
+```
+
+В переменную `all_keys` заносим все ключи, которые должны быть у работников:
+
+```
+all_keys = py_obj[0]['workers'][0].keys()
+```
+
+Для каждого работника через цикл for находим недостающие ключи и присваиваем им значение `None`:
+
+```
+for key in obj2[0]['workers']:
+    difference = (all_keys - key.keys())
+    for i in difference:
+        key[i] = None
+```
+
+Записываем содержимое в файл.
+
+```
+with open('pro2.json', 'w') as f2:
+    json.dump(obj2, f2, indent=4)
+```
+
+Результаты выполнения программы показаны на рисунках 1.1 и 1.2:
+
+![image](https://github.com/AMehriniso/project/assets/144659954/74c50290-f604-438c-b0ba-88b95fb76167)
+![image](https://github.com/AMehriniso/project/assets/144659954/ef4d1a30-17c0-4ba8-b9bf-6dceafadf4ce)
 
 
 ## Задание №2. Модуль Re
@@ -149,3 +209,7 @@ print('Время, затраченное функцией dot: ', end-start)
 Все результаты выполнения программы представлены на рисунке 3.
 
 ![2](https://github.com/AMehriniso/project/assets/144653974/8593d0bb-b3a9-4a27-b371-f4e6827cf710)
+
+
+## Задание №4. Библиотека Matplotlib.
+
